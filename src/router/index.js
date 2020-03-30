@@ -1,29 +1,26 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import MainView from '../views/MainView.vue';
+import BlogView from '../views/BlogView.vue';
+import ProjectView from '../views/ProjectView.vue';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export const router = new VueRouter({
+  router: [
+    {
+      // path: url 주소
+      path: '/',
+      // component: url 주소로 이동했을때 표시될 컴포넌트(페이지 개념)
+      component: MainView
+    },
+    {
+      path: '/blog',
+      component: BlogView
+    },
+    {
+      path: '/project',
+      component: ProjectView
+    }
+  ]
+});
