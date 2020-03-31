@@ -3,7 +3,7 @@ import App from './App.vue';
 import { router } from './router/index.js';
 
 Vue.config.productionTip = false;
-console.log(router.options);
+console.log(router);
 
 new Vue({
   render: h => h(App),
