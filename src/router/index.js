@@ -1,24 +1,34 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
 import MainView from '../views/MainView.vue';
+import BlogView from '../views/BlogView.vue';
+import ProjectView from '../views/ProjectView.vue';
 
 Vue.use(VueRouter);
 
-const Home = { template: '<div>Home</div>' };
-const NotFound = { template: '<div>Home</div>' };
+const routes = [
+  {
+    path: '/',
+    name: 'Main',
+    component: MainView
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: BlogView
+  },
+  {
+    path: '/project',
+    name: 'Project',
+    component: ProjectView
+  }
+];
 
-export const router = new VueRouter({
+const router = new VueRouter({
   mode: 'history',
-  router: [
-    {
-      // path: url 주소
-      path: '/',
-      // component: url 주소로 이동했을때 표시될 컴포넌트(페이지 개념)
-      component: Home
-    },
-    {
-      path: '*',
-      component: NotFound
-    }
-  ]
+  base: process.env.BASE_URL,
+  routes
 });
+
+export default router;
