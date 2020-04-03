@@ -1,28 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Main</router-link> |
-      <router-link to="/blog">Blog</router-link> |
-      <router-link to="/project">Project</router-link>
-    </div>
     <!-- url에 다른 뷰컴포넌트 출력 -->
+    <tool-bar></tool-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import ToolBar from './components/ToolBar.vue';
 export default {
-
+  components: {
+    ToolBar
+  }
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  padding: 0;
+  margin: 0;
 }
 </style>

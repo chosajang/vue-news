@@ -22,6 +22,10 @@ const routes = [
     path: '/project',
     name: 'Project',
     component: ProjectView
+  },
+  { /* 404 error 방지 */
+    path: '*',
+    redirect: '/'
   }
 ];
 

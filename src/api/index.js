@@ -1,0 +1,15 @@
+import axios from 'axios';
+
+// HTTP Request & Response 관련 기본 설정
+const config = {
+  baseUrl: 'https://api.hnpwa.com/v0/'
+};
+
+// API 함수 정리
+function fetchNewsList() {
+  return axios.get(`${config.baseUrl}news/1.json`);
+}
+
+export {
+  fetchNewsList
+};

@@ -1,12 +1,26 @@
 <template>
   <div>
-    BlogView
+    <div v-for="user in users">{{ user.title }}</div>
   </div>
 </template>
 
 <script>
-export default {
+import { fetchNewsList } from '../api/index.js';
 
+export default {
+  data () {
+    return {
+      users: []
+    };
+  },
+  created () {
+    var vm = this;
+    fetchNewsList()
+      .then(function (response) {
+        vm.users = response.data;
+      })
+      .catch();
+  }
 };
 </script>
 
