@@ -1,27 +1,27 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import MainView from '../views/MainView.vue';
-import BlogView from '../views/BlogView.vue';
-import ProjectView from '../views/ProjectView.vue';
+import AskView from '../views/AskView.vue';
+import JobsView from '../views/JobsView.vue';
+import NewsView from '../views/NewsView.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Main',
-    component: MainView
+    path: '/ask',
+    name: 'Ask',
+    component: AskView
   },
   {
-    path: '/blog',
-    name: 'Blog',
-    component: BlogView
+    path: '/jobs',
+    name: 'Jobs',
+    component: JobsView
   },
   {
-    path: '/project',
-    name: 'Project',
-    component: ProjectView
+    path: '/news',
+    name: 'News',
+    component: NewsView
   },
   { /* 404 error 방지 */
     path: '*',
