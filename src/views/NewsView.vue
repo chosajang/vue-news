@@ -1,5 +1,6 @@
 <template>
   <div>
+    NewsView
     <!-- <div v-for="news in newsList">{{ news }}</div> -->
   </div>
 </template>
@@ -14,7 +15,7 @@ export default {
     };
   },
   created () {
-    console.log('NewsView.vue', 'created()');
+    console.log('NewsView.vue', this.$store);
     this.$store.dispatch('FETCH_NEWS');
     // console.log(fetchnewslist);
     // fetchnewslist()

@@ -4,7 +4,7 @@ import { fetchNewsList } from '../api/index.js';
 
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+export const store = new Vuex.Store({
   state: {
     news: []
   },
@@ -17,7 +17,7 @@ const store = new Vuex.Store({
     FETCH_NEWS (context) {
       fetchNewsList()
         .then(response => {
-          // context.commit('SET_NEWS', response.data);
+          context.commit('SET_NEWS', response.data);
           console.log(response.data);
         })
         .catch(error => {
@@ -26,5 +26,3 @@ const store = new Vuex.Store({
     }
   }
 });
-
-export default store;
