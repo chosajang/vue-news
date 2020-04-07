@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
@@ -8,6 +7,11 @@ import NewsView from '../views/NewsView.vue';
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: '/',
+    name: 'Default',
+    redirect: '/ask'
+  },
   {
     path: '/ask',
     name: 'Ask',
@@ -29,10 +33,7 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
+export const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
   routes
 });
-
-export default router;
