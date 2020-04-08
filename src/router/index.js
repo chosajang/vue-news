@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import AskView from '../views/AskView.vue';
+import ItemView from '../views/ItemView.vue';
 import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
+import UserView from '../views/UserView.vue';
 
 Vue.use(VueRouter);
 
@@ -18,6 +20,11 @@ const routes = [
     component: AskView
   },
   {
+    path: '/item/:id',
+    name: 'Item',
+    component: ItemView
+  },
+  {
     path: '/jobs',
     name: 'Jobs',
     component: JobsView
@@ -26,6 +33,11 @@ const routes = [
     path: '/news',
     name: 'News',
     component: NewsView
+  },
+  {
+    path: '/user/:id',
+    name: 'User',
+    component: UserView
   },
   { /* 404 error 방지 */
     path: '*',

@@ -1,12 +1,17 @@
 <template>
   <div>
-    <div v-for="item in fetchedAsk">{{ item.title }}</div>
+    <p v-for="item in fetchedAsk" :key="item.id">
+      <router-link v-bind:to="`/item/${item.id}`">
+        {{ item.title }}
+      </router-link>
+    </p>
   </div>
 </template>
 
 <script>
 // import { fetchAskList } from '../api/index.js';
-import { mapState, mapGetters } from 'vuex';
+// import { mapState, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   // data () {
