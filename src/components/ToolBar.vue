@@ -1,8 +1,9 @@
 <template>
   <div class="header">
+    <router-link to="/news">News</router-link> |
     <router-link to="/ask">Ask</router-link> |
     <router-link to="/jobs">Jobs</router-link> |
-    <router-link to="/news">News</router-link>
+    <router-link to="/news-basic">News Basic</router-link> |
   </div>
 </template>
 

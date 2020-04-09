@@ -6,6 +6,8 @@ import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
 import UserView from '../views/UserView.vue';
 
+import NewsBasicView from '../views/NewsBasicView.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -33,6 +35,11 @@ const routes = [
     path: '/news',
     name: 'News',
     component: NewsView
+  },
+  {
+    path: '/news-basic',
+    name: 'NewsBasic',
+    component: NewsBasicView
   },
   {
     path: '/user/:id',
