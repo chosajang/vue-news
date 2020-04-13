@@ -1,8 +1,8 @@
-import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchItemInfo } from '../api/index.js';
+import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchItemInfo, fetchList } from '../api/index.js';
 
 export default {
   FETCH_NEWS (context) {
-    fetchNewsList()
+    return fetchNewsList()
       .then(response => {
         context.commit('SET_NEWS', response.data);
         return response;
@@ -12,7 +12,7 @@ export default {
       });
   },
   FETCH_JOBS ({ commit }) {
-    fetchJobsList()
+    return fetchJobsList()
       .then(response => {
         commit('SET_JOBS', response.data);
       })
@@ -21,7 +21,7 @@ export default {
       });
   },
   FETCH_ASK ({ commit }) {
-    fetchAskList()
+    return fetchAskList()
       .then(response => {
         commit('SET_ASK', response.data);
       })
@@ -30,7 +30,7 @@ export default {
       });
   },
   FETCH_ITEM ({ commit }, id) {
-    fetchItemInfo(id)
+    return fetchItemInfo(id)
       .then(response => {
         commit('SET_ITEM', response.data);
       })
@@ -39,9 +39,19 @@ export default {
       });
   },
   FETCH_USER ({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then(response => {
         commit('SET_USER', response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  FETCH_LIST ({ commit }, pageName) {
+    return fetchList(pageName)
+      .then(response => {
+        commit('SET_LIST', response.data);
+        return response;
       })
       .catch(error => {
         console.log(error);

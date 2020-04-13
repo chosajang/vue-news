@@ -46,11 +46,11 @@ export default {
     listItems () {
       const name = this.$route.name;
       let items;
-      if (name === 'News') {
+      if (name === 'news') {
         items = this.$store.state.news;
-      } else if (name === 'Ask') {
+      } else if (name === 'ask') {
         items = this.$store.state.ask;
-      } else if (name === 'Jobs') {
+      } else if (name === 'jobs') {
         items = this.$store.state.jobs;
       }
       return items;
@@ -59,11 +59,11 @@ export default {
   created () {
     const name = this.$route.name;
     let actionName = 'FETCH_NEWS';
-    if (name === 'News') {
+    if (name === 'news') {
       actionName = 'FETCH_NEWS';
-    } else if (name === 'Ask') {
+    } else if (name === 'ask') {
       actionName = 'FETCH_ASK';
-    } else if (name === 'Jobs') {
+    } else if (name === 'jobs') {
       actionName = 'FETCH_JOBS';
     }
     this.$store.dispatch(actionName);

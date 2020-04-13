@@ -52,7 +52,7 @@ body {
 
 /* Router Transitions */
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 .page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {
   opacity: 0;
