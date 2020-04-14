@@ -47,14 +47,18 @@ export default {
         console.log(error);
       });
   },
-  FETCH_LIST ({ commit }, pageName) {
-    return fetchList(pageName)
-      .then(response => {
-        commit('SET_LIST', response.data);
-        return response;
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  async FETCH_LIST ({ commit }, pageName) {
+    console.log('action.js > FETCH_LIST', pageName);
+    const response = await fetchList(pageName);
+    commit('SET_LIST', response.data);
+    return response;
+    // return fetchList(pageName)
+    //   .then(response => {
+    //     commit('SET_LIST', response.data);
+    //     return response;
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   }
 };

@@ -4,6 +4,7 @@
     <router-link to="/ask">Ask</router-link> |
     <router-link to="/jobs">Jobs</router-link> |
     <router-link to="/news-basic">News Basic</router-link> |
+    <router-link to="/login">Login</router-link> |
   </div>
 </template>
 

@@ -5,6 +5,7 @@ import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
 import UserView from '../views/UserView.vue';
+import LoginView from '../views/LoginView.vue';
 // import createListView from '../views/CreateListView.js';
 
 import NewsBasicView from '../views/NewsBasicView.vue';
@@ -86,7 +87,12 @@ const routes = [
     name: 'User',
     component: UserView
   },
-  { /* 404 error 방지 */
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  { /* 404 error ?? */
     path: '*',
     redirect: '/'
   }
