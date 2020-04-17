@@ -5,6 +5,7 @@
     <router-link to="/jobs">Jobs</router-link> |
     <router-link to="/news-basic">News Basic</router-link> |
     <router-link to="/login">Login</router-link> |
+    <router-link to="/slot">Slot</router-link> |
   </div>
 </template>
 

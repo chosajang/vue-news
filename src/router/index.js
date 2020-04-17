@@ -6,6 +6,8 @@ import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
 import UserView from '../views/UserView.vue';
 import LoginView from '../views/LoginView.vue';
+import SlotView from '../views/SlotView.vue';
+
 // import createListView from '../views/CreateListView.js';
 
 import NewsBasicView from '../views/NewsBasicView.vue';
@@ -91,6 +93,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/slot',
+    name: 'slot',
+    component: SlotView
   },
   { /* 404 error ?? */
     path: '*',
